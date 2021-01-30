@@ -1,0 +1,162 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>Page login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/all.css"> 
+</head>
+<!--Coded with love by Mutiullah Samim-->
+<body>
+<style>
+
+pre{
+	color:black;
+	font-size:18px;
+	font-weight:bold;
+    }
+	ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    box-sizing: border-box;
+    width: 14em;
+    height: 3em;
+    font-size: 20px;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    color:white;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    line-height: 3em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+ul li a{
+	color:white;
+
+
+
+}
+ul li a:hover{
+	color:white;
+
+}
+
+ul li:nth-child(even) {
+    background: linear-gradient(to right, #0f89da , #b8e8fc);
+    text-align: left;
+    padding-left: 10%;
+  
+}
+ul li:nth-child(odd){
+	background: linear-gradient(to right, #0f89da , #b8e8fc);
+    text-align: left;
+    padding-left: 10%;
+
+}
+
+
+
+.aa {
+        height: 350px;
+		width: 300px;
+		
+        
+        background: #f5f2ee;
+    
+        position:absolute; left:20px;top:150px;
+
+    
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border-radius: 5px;
+		border-radius:15px;
+
+	}
+	.aa img{
+		width:150px;
+		height:130px;
+		margin-left:50px;
+	}
+	.brand_logo_containe {
+        position: absolute;
+        height: 170px;
+        width: 170px;
+        top: -75px;
+        border-radius: 50%;
+        background: #60a3bc;
+        padding: 10px;
+        text-align: center;
+    }
+    .brand_log {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+
+</style>
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_containe">
+						<img src="cnte.jpg" class="brand_log" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+					<h4 style="text-align:center;position:absolute; top:100px;margin-left:20px">Employé login</h4>
+				
+				<?php if (isset($auth_error)): ?>
+				<div class="alert alert-danger alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<?= $auth_error ?>
+				</div>
+			<?php endif ?>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="email" name="email" class="form-control input_user" value="" placeholder="email">
+						</div>
+						<?php if (isset($email_error)) echo $email_error; ?></span>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="mot de passe">
+						</div>
+						<?php if (isset($password_error)) echo $password_error; ?>
+						
+							<div class="d-flex justify-content-center mt-3 login_container">
+							<input type="submit" class="btn login_btn" name="login"value="Submit">
+				   </div>
+					</form>
+				</div>
+</div>
+				<div class="aa">
+				<ul>
+  <li> <a href="adminlogin.php">Administrateur login</a></li>
+  <li> <a href="managerlogin.php">Directeur login</a> </li>
+  <li>  <a href="login.php">  Employé login</li>
+  <img src="images/user3.png">
+
+</ul>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
